@@ -12,16 +12,17 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import TablesCards from "./TablesCards";
+import ModeToggle from "./ModeToggle";
 
 export function TableClients() {
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
   const personEmail = faker.internet.email();
   const personIp = faker.internet.ip();
-  const personFile = faker.system.fileName();
+  const personPass = faker.internet.password();
 
   return (
-    <>
+    <div>
       <Tabs>
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="accounts">Accounts</TabsTrigger>
@@ -37,7 +38,7 @@ export function TableClients() {
                     <TableHead>Last Name</TableHead>
                     <TableHead>Email</TableHead>
                     <TableHead>IP</TableHead>
-                    <TableHead>File</TableHead>
+                    <TableHead>Password</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -46,7 +47,7 @@ export function TableClients() {
                     <TableCell>{lastName}</TableCell>
                     <TableCell>{personEmail}</TableCell>
                     <TableCell>{personIp}</TableCell>
-                    <TableCell>{personFile}</TableCell>
+                    <TableCell>{personPass}</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -56,7 +57,10 @@ export function TableClients() {
         <TabsContent value="cards">
           <TablesCards />
         </TabsContent>
+        <div className="flex mt-5 justify-start">
+          <ModeToggle />
+        </div>
       </Tabs>
-    </>
+    </div>
   );
 }

@@ -15,7 +15,6 @@ export default function TablesCards() {
   const ccNumber = faker.finance.creditCardNumber();
   const ccIssuer = faker.finance.creditCardIssuer();
   const ccCvv = faker.finance.creditCardCVV();
-  const pin = faker.finance.creditCardCVV();
 
   return (
     <>
@@ -27,9 +26,8 @@ export default function TablesCards() {
                 <TableHead>Account Number</TableHead>
                 <TableHead>Amount</TableHead>
                 <TableHead>CC Number</TableHead>
-                <TableHead>CC Issuer</TableHead>
                 <TableHead>CVV</TableHead>
-                <TableHead>Pin</TableHead>
+                <TableHead>CC Issuer</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -37,9 +35,8 @@ export default function TablesCards() {
                 <TableCell>{accountNumber}</TableCell>
                 <TableCell>{amount}</TableCell>
                 <TableCell>{ccNumber}</TableCell>
-                <TableCell>{ccIssuer}</TableCell>
                 <TableCell>{ccCvv}</TableCell>
-                <TableCell>{pin}</TableCell>
+                <TableCell>{ccIssuer}</TableCell>
               </TableRow>
             </TableBody>
           </Table>
